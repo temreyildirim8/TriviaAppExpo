@@ -10,7 +10,6 @@ import StartScreen from "./src/screens/StartScreen";
 import QuizScreen from "./src/screens/QuizScreen";
 import ResultScreen from "./src/screens/ResultScreen";
 import { RootStackParamList } from "./src/types/navigation";
-import { FadeIn } from "react-native-reanimated";
 
 const Stack = createStackNavigator<RootStackParamList>();
 

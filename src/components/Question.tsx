@@ -5,7 +5,6 @@ import { correctAnswersAtom, Question } from "../atoms/questionsAtom";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
-  withRepeat,
   withSequence,
   withTiming,
 } from "react-native-reanimated";
