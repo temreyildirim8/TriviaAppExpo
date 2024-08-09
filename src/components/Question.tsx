@@ -51,10 +51,10 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
       </View>
       <View style={styles.buttonsWrapper}>
         <View  style={{ width: '40%'}}>
-          <Button onPress={() => handleAnswer('True')} text="True" />
+          <Button onPress={() => handleAnswer('True')} text="True" bgColor='#6AA84F'/>
         </View>
         <View  style={{ width: '40%'}}>
-          <Button onPress={() => handleAnswer('False')} text="False" />
+          <Button onPress={() => handleAnswer('False')} text="False" bgColor='#E06666' />
         </View>
       </View>
     </Animated.View>

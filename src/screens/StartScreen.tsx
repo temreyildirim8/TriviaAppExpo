@@ -23,12 +23,10 @@ const StartScreen: React.FC = () => {
           There are four trivia questions on this quiz.{' '}
         </Text>
         <Text style={styles.description}> Would you dare? </Text>
-        <View style={styles.buttonWrapper}>
-          <Button
-            onPress={() => navigation.navigate('QuizScreen')}
-            text="Start"
-          />
-        </View>
+        <Button
+          onPress={() => navigation.navigate('QuizScreen')}
+          text="Start"
+        />
       </Page>
     </>
   );
@@ -40,8 +38,5 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 18,
     paddingBottom: 10,
-  },
-  buttonWrapper: {
-    width: '50%',
   },
 });

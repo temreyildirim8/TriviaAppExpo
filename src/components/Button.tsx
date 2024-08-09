@@ -8,9 +8,11 @@ interface ButtonProps {
   text: string;
   onPress: () => void;
   style?: any;
+  textColor?: string
+  bgColor?: string
 }
 
-const Button: React.FC<ButtonProps> = ({ text, onPress, style }) => {
+const Button: React.FC<ButtonProps> = ({ text, onPress, style, textColor, bgColor }) => {
   const colors = useColors();
   const scale = useSharedValue(1);
 
@@ -33,10 +35,10 @@ const Button: React.FC<ButtonProps> = ({ text, onPress, style }) => {
       onPress={onPress}
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
-      style={[styles.button, style, { backgroundColor: colors.bgGeneric }]}
+      style={[styles.button, style, { backgroundColor: bgColor || colors.bgGeneric }]}
     >
       <Animated.View style={animatedStyle}>
-        <Text style={[styles.buttonText, { color: colors.white }]}>
+        <Text style={[styles.buttonText, { color: textColor || colors.white }]}>
           {text}
         </Text>
       </Animated.View>

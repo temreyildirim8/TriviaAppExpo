@@ -1,6 +1,6 @@
 const colors = {
   white: '#ffffff',
-  bgGeneric: '#26867c',
+  bgGeneric: '#d79444',
   skeletonBgColor: '#e0e0e0',
 };
 
