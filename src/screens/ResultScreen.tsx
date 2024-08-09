@@ -23,7 +23,7 @@ const ResultScreen: React.FC = () => {
   const navigation = useNavigation<ResultScreenNavigationProp>();
 
   const handlePlayAgain = () => {
-    setQuestions([])
+    setQuestions([]);
     setCorrectAnswers(0);
     setCurrentQuestionIndex(0);
     navigation.navigate("StartScreen");
@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
+    justifyContent: "center",
     padding: 16,
   },
   score: {

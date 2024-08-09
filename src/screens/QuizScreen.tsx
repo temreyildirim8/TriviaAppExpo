@@ -34,7 +34,7 @@ const QuizScreen: React.FC = () => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       {questions?.length > 0 ? (
         <QuestionComponent
           question={questions[currentQuestionIndex]}
@@ -51,6 +51,11 @@ const QuizScreen: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   loadingContainer: {
     flex: 1,
     alignItems: "center",
