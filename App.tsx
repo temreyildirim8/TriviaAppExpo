@@ -1,15 +1,15 @@
-import "react-native-gesture-handler";
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import 'react-native-gesture-handler';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import {
   CardStyleInterpolators,
   createStackNavigator,
-} from "@react-navigation/stack";
-import { Provider } from "jotai";
-import StartScreen from "./src/screens/StartScreen";
-import QuizScreen from "./src/screens/QuizScreen";
-import ResultScreen from "./src/screens/ResultScreen";
-import { RootStackParamList } from "./src/types/navigation";
+} from '@react-navigation/stack';
+import { Provider } from 'jotai';
+import StartScreen from './src/screens/StartScreen';
+import QuizScreen from './src/screens/QuizScreen';
+import ResultScreen from './src/screens/ResultScreen';
+import { RootStackParamList } from './src/types/navigation';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -22,25 +22,22 @@ export default function App() {
           screenOptions={{
             cardStyleInterpolator:
               CardStyleInterpolators.forFadeFromBottomAndroid,
+            headerTitleAlign: 'center',
+            headerTitleStyle: { fontSize: 24 },
           }}
-          
         >
           <Stack.Screen
             name="StartScreen"
             component={StartScreen}
             options={{
-              title: "Start",
-              headerTitleAlign: 'center',
-              headerTitleStyle: { fontSize: 24 },
+              title: 'Start',
             }}
           />
           <Stack.Screen
             name="QuizScreen"
             component={QuizScreen}
             options={{
-              title: "Quiz",
-              headerTitleAlign: 'center',
-              headerTitleStyle: { fontSize: 24 },
+              title: 'Quiz',
             }}
           />
           <Stack.Screen
@@ -49,9 +46,7 @@ export default function App() {
             options={{
               gestureEnabled: false,
               headerLeft: () => null,
-              title: "Result",
-              headerTitleAlign: 'center',
-              headerTitleStyle: { fontSize: 24 }
+              title: 'Result',
             }}
           />
         </Stack.Navigator>
