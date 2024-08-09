@@ -19,8 +19,8 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
     wiggle.value = withRepeat(withSequence(
       withTiming(-10, { duration: 100 }),
       withTiming(10, { duration: 100 })
-    ), -1, true);
-  }, [wiggle]);
+    ), 3);
+  }, []);
 
   const animatedStyle = useAnimatedStyle(() => {
     return {
