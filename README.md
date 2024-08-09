@@ -14,7 +14,7 @@ A simple trivia app built with React Native, TypeScript, Jotai for state managem
 
 ## Easy installation and usage (with Expo Go)
 
-- git clone https://github.com/your-username/TriviaApp.git
+- git clone https://github.com/temreyildirim8/TriviaAppExpo.git
   
 Install Dependencies:
 - cd TriviaApp 
@@ -24,7 +24,7 @@ Start the project:
 - npx expo start --reset-cache
 
 ## Native installation and usage 
-- git clone https://github.com/your-username/TriviaApp.git
+- git clone https://github.com/temreyildirim8/TriviaAppExpo.git
   
 Install Dependencies:
 - cd TriviaApp
