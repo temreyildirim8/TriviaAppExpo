@@ -1,12 +1,16 @@
 import "react-native-gesture-handler";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import {
+  CardStyleInterpolators,
+  createStackNavigator,
+} from "@react-navigation/stack";
 import { Provider } from "jotai";
 import StartScreen from "./src/screens/StartScreen";
 import QuizScreen from "./src/screens/QuizScreen";
 import ResultScreen from "./src/screens/ResultScreen";
 import { RootStackParamList } from "./src/types/navigation";
+import { FadeIn } from "react-native-reanimated";
 
 const Stack = createStackNavigator<RootStackParamList>();
 
@@ -14,7 +18,13 @@ export default function App() {
   return (
     <Provider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="StartScreen">
+        <Stack.Navigator
+          initialRouteName="StartScreen"
+          screenOptions={{
+            cardStyleInterpolator:
+              CardStyleInterpolators.forFadeFromBottomAndroid,
+          }}
+        >
           <Stack.Screen
             name="StartScreen"
             component={StartScreen}
