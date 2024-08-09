@@ -1,8 +1,9 @@
 import React from "react";
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../types/navigation";
 import { useNavigation } from "@react-navigation/native";
+import Button from "../components/Button";
 
 type StartScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -14,12 +15,9 @@ const StartScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Pressable
-        onPress={() => navigation.navigate("QuizScreen")}
-        style={styles.button}
-      >
-        <Text style={styles.buttonText}> Start </Text>
-      </Pressable>
+      <View style={styles.buttonWrapper}> 
+        <Button onPress={() => navigation.navigate("QuizScreen")} text="Start"/>        
+      </View>
     </View>
   );
 };
@@ -34,15 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     padding: 16,
   },
-  button: {
-    padding: 10,
-    borderRadius: 10,
-    backgroundColor: "#40E0D0",
-    width: '70%'
+  buttonWrapper: {
+    width: '50%'
   },
-  buttonText: {
-    fontSize: 40,
-    textAlign: 'center',
-    color: 'white'
-  }
 });
