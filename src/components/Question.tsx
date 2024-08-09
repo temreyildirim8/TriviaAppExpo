@@ -10,6 +10,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { decodeHtmlEntities } from '../utils/helpers';
 import Button from './Button';
+import useColors from '../hooks/useColors';
 
 type QuestionProps = {
   question: Question;
@@ -20,6 +21,7 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
   const [, setCorrectAnswers] = useAtom(correctAnswersAtom);
 
   const wiggle = useSharedValue(0);
+  const colors = useColors();
 
   useEffect(() => {
     wiggle.value = withSequence(
@@ -43,7 +45,7 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
 
   return (
     <Animated.View style={[animatedStyle, styles.container]}>
-      <View style={styles.questionTextWrapper}>
+      <View style={[ styles.questionTextWrapper, { borderColor: colors.borderColor }]}>
         <Text style={styles.questionText}>
           {decodeHtmlEntities(question.question)}
           {/* We are calling decodeHtmlEntities to get rid of html symbols like &quot */}
@@ -51,10 +53,10 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
       </View>
       <View style={styles.buttonsWrapper}>
         <View  style={{ width: '40%'}}>
-          <Button onPress={() => handleAnswer('True')} text="True" bgColor='#6AA84F'/>
+          <Button onPress={() => handleAnswer('True')} text="True" bgColor={colors.true}/>
         </View>
         <View  style={{ width: '40%'}}>
-          <Button onPress={() => handleAnswer('False')} text="False" bgColor='#E06666' />
+          <Button onPress={() => handleAnswer('False')} text="False" bgColor={colors.false} />
         </View>
       </View>
     </Animated.View>
@@ -74,7 +76,6 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    borderColor: '#000000',
     borderWidth: 1,
     borderRadius: 10,
   },
