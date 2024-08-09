@@ -1,13 +1,13 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../types/navigation";
-import { useNavigation } from "@react-navigation/native";
-import Button from "../components/Button";
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../types/navigation';
+import { useNavigation } from '@react-navigation/native';
+import Button from '../components/Button';
 
 type StartScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
-  "StartScreen"
+  'StartScreen'
 >;
 
 const StartScreen: React.FC = () => {
@@ -17,7 +17,7 @@ const StartScreen: React.FC = () => {
     <View style={styles.container}>
       <View style={styles.buttonWrapper}>
         <Button
-          onPress={() => navigation.navigate("QuizScreen")}
+          onPress={() => navigation.navigate('QuizScreen')}
           text="Start"
         />
       </View>
@@ -30,11 +30,11 @@ export default StartScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 16,
   },
   buttonWrapper: {
-    width: "50%",
+    width: '50%',
   },
 });

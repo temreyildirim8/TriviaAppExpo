@@ -1,20 +1,20 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
-import { useAtom } from "jotai";
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { useAtom } from 'jotai';
 import {
   questionsAtom,
   currentQuestionIndexAtom,
-} from "../atoms/questionsAtom";
-import useFetchQuestions from "../hooks/useFetchQuestions";
-import QuestionComponent from "../components/Question";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../types/navigation";
-import { useNavigation } from "@react-navigation/native";
-import Skeleton from "../components/Skeleton";
+} from '../atoms/questionsAtom';
+import useFetchQuestions from '../hooks/useFetchQuestions';
+import QuestionComponent from '../components/Question';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../types/navigation';
+import { useNavigation } from '@react-navigation/native';
+import Skeleton from '../components/Skeleton';
 
 type QuizScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
-  "QuizScreen"
+  'QuizScreen'
 >;
 
 const QuizScreen: React.FC = () => {
@@ -29,7 +29,7 @@ const QuizScreen: React.FC = () => {
     if (currentQuestionIndex < 3) {
       setCurrentQuestionIndex((prev) => prev + 1);
     } else {
-      navigation.navigate("ResultScreen");
+      navigation.navigate('ResultScreen');
     }
   };
 
@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 16
-  }
+    padding: 16,
+  },
 });
 
 export default QuizScreen;

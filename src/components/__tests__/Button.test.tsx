@@ -6,7 +6,9 @@ describe('Button', () => {
   it('renders correctly and responds to press events', () => {
     const mockOnPress = jest.fn();
 
-    const { getByText } = render(<Button text="Click Me" onPress={mockOnPress} />);
+    const { getByText } = render(
+      <Button text="Click Me" onPress={mockOnPress} />
+    );
 
     const button = getByText('Click Me');
     fireEvent.press(button);
