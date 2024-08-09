@@ -33,10 +33,10 @@ const Button: React.FC<ButtonProps> = ({ text, onPress, style }) => {
       onPress={onPress}
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
-      style={[styles.button, style, { backgroundColor: colors.buttonBgColor }]}
+      style={[styles.button, style, { backgroundColor: colors.bgGeneric }]}
     >
       <Animated.View style={animatedStyle}>
-        <Text style={[styles.buttonText, { color: colors.buttonColor }]}>
+        <Text style={[styles.buttonText, { color: colors.white }]}>
           {text}
         </Text>
       </Animated.View>

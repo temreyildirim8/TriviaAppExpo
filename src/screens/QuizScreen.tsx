@@ -40,8 +40,8 @@ const QuizScreen: React.FC = () => {
     <Page>
       {questions?.length > 0 ? (
         <>
-          <View style={{ borderRadius: 10, backgroundColor: colors.buttonBgColor, padding: 10 }}>
-            <Text style={{color: colors.buttonColor}}>{`${String(currentQuestionIndex + 1)} / ${questions.length}`}</Text>
+          <View style={{ borderRadius: 10, backgroundColor: colors.bgGeneric, padding: 10 }}>
+            <Text style={{color: colors.white}}>{`${String(currentQuestionIndex + 1)} / ${questions.length}`}</Text>
           </View>
           <QuestionComponent
             question={questions[currentQuestionIndex]}
