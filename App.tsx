@@ -35,7 +35,7 @@ export default function App() {
             options={{
               gestureEnabled: false,
               headerLeft: () => null,
-              title: "Results",
+              title: "Result",
             }}
           />
         </Stack.Navigator>
