@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = ({ title, showBackButton = false }) => {
   return (
     <View style={[styles.header, { backgroundColor: colors.bgGeneric }]}>
       {showBackButton && (
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton} testID="back-button">
           <BackButtonSvg width={24} height={24} color={colors.white} />
         </TouchableOpacity>
       )}
