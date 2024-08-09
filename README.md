@@ -10,40 +10,45 @@ A simple trivia app built with React Native, TypeScript, Jotai for state managem
 - **Reanimated**: A library for creating smooth animations in React Native.
 - **Expo**: A framework and platform for universal React applications.
 - **Axios**: A promise-based HTTP client for the browser and Node.js.
+- **Jest**: Unit testing tool
+- **Detox**: e2e testing tool
 
 ## Easy installation and usage (with Expo Go)
 
-git clone https://github.com/your-username/TriviaApp.git
+- git clone https://github.com/your-username/TriviaApp.git
   
 Install Dependencies:
-cd TriviaApp && npm install || yarn
+- cd TriviaApp 
+- npm install || yarn
 
 Start the project:
-npx expo start --reset-cache
+- npx expo start --reset-cache
 
 ## Native installation and usage 
-git clone https://github.com/your-username/TriviaApp.git
+- git clone https://github.com/your-username/TriviaApp.git
   
 Install Dependencies:
-cd TriviaApp && npm install || yarn
+- cd TriviaApp
+- npm install || yarn
 
 Install Pods for iOS (if you are on macOS):
-npx pod-install
+- npx pod-install
 
-npm start
+- npm start
 
 Run on iOS:
-npm run ios
+- npm run ios
 
 Run on Android:
-npm run android
+- npm run android
 
 ## Purpose
 The purpose of this project is to demonstrate the use of modern React Native development practices, including:
 
-Using TypeScript for type safety.
-Managing state with Jotai, a lightweight state management library.
-Creating animations with Reanimated.
-Structuring a React Native project for maintainability and scalability.
-Fetching and displaying data from a remote API.
-This project serves as a learning tool and a template for building more complex React Native applications.
+- Using TypeScript for type safety.
+- Managing state with Jotai, a lightweight state management library.
+- Creating animations with Reanimated.
+- Structuring a React Native project for maintainability and scalability.
+- Fetching and displaying data from a remote API.
+- This project serves as a learning tool and a template for building more complex React Native applications.
+- Creating unit tests and e2e for code coverage
