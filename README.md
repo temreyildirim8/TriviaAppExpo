@@ -11,7 +11,6 @@ A simple trivia app built with React Native, TypeScript, Jotai for state managem
 - **Expo**: A framework and platform for universal React applications.
 - **Axios**: A promise-based HTTP client for the browser and Node.js.
 - **Jest**: Unit testing tool
-- **Detox**: e2e testing tool
 
 ## Easy installation and usage (with Expo Go)
 
@@ -51,4 +50,4 @@ The purpose of this project is to demonstrate the use of modern React Native dev
 - Structuring a React Native project for maintainability and scalability.
 - Fetching and displaying data from a remote API.
 - This project serves as a learning tool and a template for building more complex React Native applications.
-- Creating unit tests and e2e for code coverage
+- Creating unit test(s) for code coverage
