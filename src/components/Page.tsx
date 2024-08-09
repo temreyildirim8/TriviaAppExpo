@@ -13,9 +13,7 @@ const Page: React.FC<PageProps> = ({ children }) => {
       colors={['#d7944466', '#fefdfd']}
       style={styles.gradient}
     >
-      <View style={styles.container}>
-        {children}
-      </View>
+      <View style={styles.container}>{children}</View>
     </LinearGradient>
   );
 };

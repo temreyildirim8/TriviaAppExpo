@@ -19,7 +19,9 @@ describe('Header Component', () => {
     const mockGoBack = jest.fn();
     (useNavigation as jest.Mock).mockReturnValue({ goBack: mockGoBack });
 
-    const { getByTestId } = render(<Header title="Test Title" showBackButton={true} />);
+    const { getByTestId } = render(
+      <Header title="Test Title" showBackButton={true} />
+    );
     const backButton = getByTestId('back-button');
     expect(backButton).toBeTruthy();
 
@@ -29,7 +31,9 @@ describe('Header Component', () => {
   });
 
   it('does not render the back button when showBackButton is false', () => {
-    const { queryByTestId } = render(<Header title="Test Title" showBackButton={false} />);
+    const { queryByTestId } = render(
+      <Header title="Test Title" showBackButton={false} />
+    );
     const backButton = queryByTestId('back-button');
     expect(backButton).toBeNull();
   });

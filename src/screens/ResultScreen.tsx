@@ -33,14 +33,14 @@ const ResultScreen: React.FC = () => {
 
   return (
     <>
-    <Header title="Result" />
-    <Page>
-      <Text style={styles.score}>
-        Correct Answers: {correctAnswers} / Wrong Answers:{' '}
-        {questions.length - correctAnswers}
-      </Text>
-      <Button text="Play Again" onPress={() => handlePlayAgain()} />
-    </Page>
+      <Header title="Result" />
+      <Page>
+        <Text style={styles.score}>
+          Correct Answers: {correctAnswers} / Wrong Answers:{' '}
+          {questions.length - correctAnswers}
+        </Text>
+        <Button text="Play Again" onPress={() => handlePlayAgain()} />
+      </Page>
     </>
   );
 };

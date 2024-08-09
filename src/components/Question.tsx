@@ -45,18 +45,31 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
 
   return (
     <Animated.View style={[animatedStyle, styles.container]}>
-      <View style={[ styles.questionTextWrapper, { borderColor: colors.borderColor }]}>
+      <View
+        style={[
+          styles.questionTextWrapper,
+          { borderColor: colors.borderColor },
+        ]}
+      >
         <Text style={styles.questionText}>
           {decodeHtmlEntities(question.question)}
           {/* We are calling decodeHtmlEntities to get rid of html symbols like &quot */}
         </Text>
       </View>
       <View style={styles.buttonsWrapper}>
-        <View  style={{ width: '40%'}}>
-          <Button onPress={() => handleAnswer('True')} text="True" bgColor={colors.true}/>
+        <View style={{ width: '40%' }}>
+          <Button
+            onPress={() => handleAnswer('True')}
+            text="True"
+            bgColor={colors.true}
+          />
         </View>
-        <View  style={{ width: '40%'}}>
-          <Button onPress={() => handleAnswer('False')} text="False" bgColor={colors.false} />
+        <View style={{ width: '40%' }}>
+          <Button
+            onPress={() => handleAnswer('False')}
+            text="False"
+            bgColor={colors.false}
+          />
         </View>
       </View>
     </Animated.View>
@@ -68,7 +81,7 @@ const styles = StyleSheet.create({
     padding: 20,
     height: 350,
     width: '100%',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   questionTextWrapper: {
     padding: 10,

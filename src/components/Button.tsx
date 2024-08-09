@@ -1,18 +1,28 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import Animated, { useSharedValue, useAnimatedStyle, withSpring } from 'react-native-reanimated';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withSpring,
+} from 'react-native-reanimated';
 import useColors from '../hooks/useColors';
 
 interface ButtonProps {
   text: string;
   onPress: () => void;
   style?: any;
-  textColor?: string
-  bgColor?: string
+  textColor?: string;
+  bgColor?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, onPress, style, textColor, bgColor }) => {
+const Button: React.FC<ButtonProps> = ({
+  text,
+  onPress,
+  style,
+  textColor,
+  bgColor,
+}) => {
   const colors = useColors();
   const scale = useSharedValue(1);
 
@@ -35,7 +45,11 @@ const Button: React.FC<ButtonProps> = ({ text, onPress, style, textColor, bgColo
       onPress={onPress}
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
-      style={[styles.button, style, { backgroundColor: bgColor || colors.bgGeneric }]}
+      style={[
+        styles.button,
+        style,
+        { backgroundColor: bgColor || colors.bgGeneric },
+      ]}
     >
       <Animated.View style={animatedStyle}>
         <Text style={[styles.buttonText, { color: textColor || colors.white }]}>
