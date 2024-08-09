@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { useAtom } from 'jotai';
 import {
   questionsAtom,
@@ -12,6 +12,7 @@ import { RootStackParamList } from '../types/navigation';
 import { useNavigation } from '@react-navigation/native';
 import Skeleton from '../components/Skeleton';
 import Page from '../components/Page';
+import useColors from '../hooks/useColors';
 
 type QuizScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -25,6 +26,7 @@ const QuizScreen: React.FC = () => {
     currentQuestionIndexAtom
   );
   const navigation = useNavigation<QuizScreenNavigationProp>();
+  const colors = useColors();
 
   const handleAnswer = () => {
     if (currentQuestionIndex < 3) {
@@ -38,7 +40,9 @@ const QuizScreen: React.FC = () => {
     <Page>
       {questions?.length > 0 ? (
         <>
-          <Text>{`${String(currentQuestionIndex + 1)} / ${questions.length}`}</Text>
+          <View style={{ borderRadius: 10, backgroundColor: colors.buttonBgColor, padding: 10 }}>
+            <Text style={{color: colors.buttonColor}}>{`${String(currentQuestionIndex + 1)} / ${questions.length}`}</Text>
+          </View>
           <QuestionComponent
             question={questions[currentQuestionIndex]}
             onAnswer={handleAnswer}
@@ -46,7 +50,7 @@ const QuizScreen: React.FC = () => {
         </>
       ) : (
         <>
-          <Skeleton height={20} width="10%" />
+          <Skeleton height={40} width="10%" />
           <Skeleton height={280} width="80%" style={{ marginTop: 20 }} />
           <Skeleton height={60} width="50%" style={{ marginTop: 20 }} />
         </>
