@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { useAtom } from "jotai";
-import {
-  correctAnswersAtom,
-  Question,
-} from "../atoms/questionsAtom";
+import { correctAnswersAtom, Question } from "../atoms/questionsAtom";
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -26,18 +23,15 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
   const wiggle = useSharedValue(0);
 
   useEffect(() => {
-    wiggle.value = withRepeat(
-      withSequence(
-        withTiming(-10, { duration: 100 }),
-        withTiming(10, { duration: 100 })
-      ),
-      3
+    wiggle.value = withSequence(
+      withTiming(-30, { duration: 200 }),
+      withTiming(0, { duration: 200 }),
     );
   }, [question]);
 
   const animatedStyle = useAnimatedStyle(() => {
     return {
-      transform: [{ translateX: wiggle.value }],
+      transform: [{ translateY: wiggle.value }],
     };
   });
 
@@ -74,7 +68,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     gap: 10,
-  }
+  },
 });
 
 export default QuestionComponent;
