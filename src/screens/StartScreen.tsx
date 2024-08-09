@@ -29,21 +29,23 @@ const StartScreen: React.FC = () => {
     <>
       <Header title="Start" />
       <Page>
-        <Text style={styles.description}>
-          There are four trivia questions on this quiz.{' '}
-        </Text>
-        <Text style={styles.description}> Would you dare? </Text>
-        <Button
-          onPress={handleStartPress}
-          text="Start"
-          style={styles.button}
-          disabled={isButtonDisabled}
-        />
-        {isButtonDisabled && (
-          <Text style={[styles.timerText, { color: colors.bgGeneric }]}>
-            You can start in {timer} seconds
+        <View style={styles.container}>
+          <Text style={styles.description}>
+            There are four trivia questions on this quiz.{' '}
           </Text>
-        )}
+          <Text style={styles.description}> Would you dare? </Text>
+          <Button
+            onPress={handleStartPress}
+            text="Start"
+            style={styles.button}
+            disabled={isButtonDisabled}
+          />
+          {isButtonDisabled && (
+            <Text style={[styles.timerText, { color: colors.bgGeneric }]}>
+              You can start in {timer} seconds
+            </Text>
+          )}
+        </View>
       </Page>
     </>
   );
@@ -52,16 +54,23 @@ const StartScreen: React.FC = () => {
 export default StartScreen;
 
 const styles = StyleSheet.create({
+  container: {
+    height: 300
+  },
   description: {
     fontSize: 18,
     paddingBottom: 10,
+    textAlign: 'center'
   },
   button: {
     marginTop: 20,
+    width: '50%',
+    marginHorizontal: 'auto'
   },
   timerText: {
     marginTop: 20,
     fontSize: 16,
     fontWeight: 'bold',
+    textAlign: 'center'
   },
 });
