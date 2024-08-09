@@ -23,12 +23,14 @@ export default function App() {
             cardStyleInterpolator:
               CardStyleInterpolators.forFadeFromBottomAndroid,
           }}
+          
         >
           <Stack.Screen
             name="StartScreen"
             component={StartScreen}
             options={{
               title: "Start",
+              headerTitleAlign: 'center'
             }}
           />
           <Stack.Screen
@@ -36,6 +38,7 @@ export default function App() {
             component={QuizScreen}
             options={{
               title: "Quiz",
+              headerTitleAlign: 'center'
             }}
           />
           <Stack.Screen
@@ -45,6 +48,7 @@ export default function App() {
               gestureEnabled: false,
               headerLeft: () => null,
               title: "Result",
+              headerTitleAlign: 'center'
             }}
           />
         </Stack.Navigator>
