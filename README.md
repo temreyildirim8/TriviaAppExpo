@@ -11,13 +11,23 @@ A simple trivia app built with React Native, TypeScript, Jotai for state managem
 - **Expo**: A framework and platform for universal React applications.
 - **Axios**: A promise-based HTTP client for the browser and Node.js.
 
-## Setup and Installation
+## Easy installation and usage (with Expo Go)
 
 git clone https://github.com/your-username/TriviaApp.git
-cd TriviaApp
   
 Install Dependencies:
-npm install
+cd TriviaApp
+npm install || yarn
+
+Start the project:
+npx expo start --reset-cache
+
+## Native installation and usage 
+git clone https://github.com/your-username/TriviaApp.git
+  
+Install Dependencies:
+cd TriviaApp
+npm install || yarn
 
 Install Pods for iOS (if you are on macOS):
 npx pod-install
