@@ -14,6 +14,7 @@ interface ButtonProps {
   style?: any;
   textColor?: string;
   bgColor?: string;
+  disabled?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -22,6 +23,7 @@ const Button: React.FC<ButtonProps> = ({
   style,
   textColor,
   bgColor,
+  disabled,
 }) => {
   const colors = useColors();
   const scale = useSharedValue(1);
@@ -49,7 +51,9 @@ const Button: React.FC<ButtonProps> = ({
         styles.button,
         style,
         { backgroundColor: bgColor || colors.bgGeneric },
+        disabled && { backgroundColor: colors.bgDisabled },
       ]}
+      disabled={disabled}
     >
       <Animated.View style={animatedStyle}>
         <Text style={[styles.buttonText, { color: textColor || colors.white }]}>

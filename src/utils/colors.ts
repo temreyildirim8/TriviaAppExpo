@@ -5,6 +5,8 @@ const colors = {
   borderColor: '#000000',
   true: '#6AA84F',
   false: '#E06666',
+  bgDisabled: '#9b9c9b',
+  bgDisabledText: '##fefdfd',
 };
 
 export default colors;

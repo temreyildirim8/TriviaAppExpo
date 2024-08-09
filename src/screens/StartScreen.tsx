@@ -6,6 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 import Button from '../components/Button';
 import Page from '../components/Page';
 import Header from '../components/Header';
+import useStartTimer from '../hooks/useStartTimer';
+import useColors from '../hooks/useColors';
 
 type StartScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -14,6 +16,14 @@ type StartScreenNavigationProp = StackNavigationProp<
 
 const StartScreen: React.FC = () => {
   const navigation = useNavigation<StartScreenNavigationProp>();
+  const colors = useColors();
+  const { isButtonDisabled, timer, startTimer } = useStartTimer(20); 
+  // Use the hook with a 20-second timer to decrease request number
+
+  const handleStartPress = () => {
+    navigation.navigate('QuizScreen');
+    startTimer(); // Start the timer after pressing 'start'
+  };
 
   return (
     <>
@@ -24,9 +34,16 @@ const StartScreen: React.FC = () => {
         </Text>
         <Text style={styles.description}> Would you dare? </Text>
         <Button
-          onPress={() => navigation.navigate('QuizScreen')}
+          onPress={handleStartPress}
           text="Start"
+          style={styles.button}
+          disabled={isButtonDisabled}
         />
+        {isButtonDisabled && (
+          <Text style={[styles.timerText, { color: colors.bgGeneric }]}>
+            You can start in {timer} seconds
+          </Text>
+        )}
       </Page>
     </>
   );
@@ -38,5 +55,13 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 18,
     paddingBottom: 10,
+  },
+  button: {
+    marginTop: 20,
+  },
+  timerText: {
+    marginTop: 20,
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
