@@ -32,7 +32,7 @@ const ResultScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.score}>
-        Score: {correctAnswers} / {questions.length}{" "}
+        Correct Answers: {correctAnswers} / Wrong Answers: {questions.length - correctAnswers}
       </Text>
       <Button text="Play Again" onPress={() => handlePlayAgain()} />
     </View>
@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   score: {
-    fontSize: 24,
-    marginBottom: 10,
+    fontSize: 16,
+    marginBottom: 16,
   },
 });
 
