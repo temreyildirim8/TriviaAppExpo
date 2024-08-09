@@ -16,8 +16,7 @@ A simple trivia app built with React Native, TypeScript, Jotai for state managem
 git clone https://github.com/your-username/TriviaApp.git
   
 Install Dependencies:
-cd TriviaApp
-npm install || yarn
+cd TriviaApp && npm install || yarn
 
 Start the project:
 npx expo start --reset-cache
@@ -26,8 +25,7 @@ npx expo start --reset-cache
 git clone https://github.com/your-username/TriviaApp.git
   
 Install Dependencies:
-cd TriviaApp
-npm install || yarn
+cd TriviaApp && npm install || yarn
 
 Install Pods for iOS (if you are on macOS):
 npx pod-install
