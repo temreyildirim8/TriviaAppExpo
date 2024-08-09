@@ -3,6 +3,7 @@ import { View, Text, Button } from 'react-native';
 import { useAtom } from 'jotai';
 import { correctAnswersAtom, incorrectAnswersAtom, Question } from '../atoms/questionsAtom';
 import Animated, { useSharedValue, useAnimatedStyle, withRepeat, withSequence, withTiming } from 'react-native-reanimated';
+import { decodeHtmlEntities } from '../utils/helpers';
 
 type QuestionProps = {
   question: Question;
@@ -39,7 +40,7 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
 
   return (
     <View>
-      <Text>{question.question}</Text>
+      <Text>{decodeHtmlEntities(question.question)}</Text>
       <Animated.View style={animatedStyle}>
         <Button title="True" onPress={() => handleAnswer('True')} />
         <Button title="False" onPress={() => handleAnswer('False')} />
