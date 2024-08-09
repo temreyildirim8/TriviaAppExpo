@@ -50,8 +50,12 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
         </Text>
       </View>
       <View style={styles.buttonsWrapper}>
-        <Button onPress={() => handleAnswer('True')} text="True" />
-        <Button onPress={() => handleAnswer('False')} text="False" />
+        <View  style={{ width: '40%'}}>
+          <Button onPress={() => handleAnswer('True')} text="True" />
+        </View>
+        <View  style={{ width: '40%'}}>
+          <Button onPress={() => handleAnswer('False')} text="False" />
+        </View>
       </View>
     </Animated.View>
   );

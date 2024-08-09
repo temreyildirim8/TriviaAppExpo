@@ -11,6 +11,7 @@ import { RootStackParamList } from '../types/navigation';
 import { useNavigation } from '@react-navigation/native';
 import Button from '../components/Button';
 import Page from '../components/Page'; // Import the new Page component
+import Header from '../components/Header';
 
 type ResultScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -31,6 +32,8 @@ const ResultScreen: React.FC = () => {
   };
 
   return (
+    <>
+    <Header title="Result" />
     <Page>
       <Text style={styles.score}>
         Correct Answers: {correctAnswers} / Wrong Answers:{' '}
@@ -38,6 +41,7 @@ const ResultScreen: React.FC = () => {
       </Text>
       <Button text="Play Again" onPress={() => handlePlayAgain()} />
     </Page>
+    </>
   );
 };
 

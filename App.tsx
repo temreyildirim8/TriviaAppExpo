@@ -22,8 +22,7 @@ export default function App() {
           screenOptions={{
             cardStyleInterpolator:
               CardStyleInterpolators.forFadeFromBottomAndroid,
-            headerTitleAlign: 'center',
-            headerTitleStyle: { fontSize: 24 },
+            headerShown: false,
           }}
         >
           <Stack.Screen
