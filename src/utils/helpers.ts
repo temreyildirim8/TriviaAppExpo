@@ -16,6 +16,7 @@ export const decodeHtmlEntities = (text: string) => {
     .replace(/&trade;/g, "™")
     .replace(/&ndash;/g, "–")
     .replace(/&mdash;/g, "—")
+    .replace(/&minus;/g, "–")
     .replace(/&#43;/g, "+")
     .replace(/&times;/g, "×")
     .replace(/&divide;/g, "÷")
