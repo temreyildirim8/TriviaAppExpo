@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
 import { useAtom } from 'jotai';
 import {
   questionsAtom,
@@ -11,6 +10,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../types/navigation';
 import { useNavigation } from '@react-navigation/native';
 import Skeleton from '../components/Skeleton';
+import Page from '../components/Page';
 
 type QuizScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -34,7 +34,7 @@ const QuizScreen: React.FC = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <Page>
       {questions?.length > 0 ? (
         <QuestionComponent
           question={questions[currentQuestionIndex]}
@@ -46,17 +46,8 @@ const QuizScreen: React.FC = () => {
           <Skeleton height={60} width="50%" style={{ marginTop: 20 }} />
         </>
       )}
-    </View>
+    </Page>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 16,
-  },
-});
 
 export default QuizScreen;

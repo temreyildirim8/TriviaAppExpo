@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 import { useAtom } from 'jotai';
 import {
   correctAnswersAtom,
@@ -10,6 +10,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../types/navigation';
 import { useNavigation } from '@react-navigation/native';
 import Button from '../components/Button';
+import Page from '../components/Page'; // Import the new Page component
 
 type ResultScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -30,23 +31,17 @@ const ResultScreen: React.FC = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <Page>
       <Text style={styles.score}>
         Correct Answers: {correctAnswers} / Wrong Answers:{' '}
         {questions.length - correctAnswers}
       </Text>
       <Button text="Play Again" onPress={() => handlePlayAgain()} />
-    </View>
+    </Page>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 16,
-  },
   score: {
     fontSize: 16,
     marginBottom: 16,
