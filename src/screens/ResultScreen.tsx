@@ -17,12 +17,13 @@ type ResultScreenNavigationProp = StackNavigationProp<
 >;
 
 const ResultScreen: React.FC = () => {
-  const [questions] = useAtom(questionsAtom);
+  const [questions, setQuestions] = useAtom(questionsAtom);
   const [correctAnswers, setCorrectAnswers] = useAtom(correctAnswersAtom);
   const [, setCurrentQuestionIndex] = useAtom(currentQuestionIndexAtom);
   const navigation = useNavigation<ResultScreenNavigationProp>();
 
   const handlePlayAgain = () => {
+    setQuestions([])
     setCorrectAnswers(0);
     setCurrentQuestionIndex(0);
     navigation.navigate("StartScreen");
