@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { useAtom } from "jotai";
 import {
   correctAnswersAtom,
@@ -29,9 +29,8 @@ const ResultScreen: React.FC = () => {
   };
 
   return (
-    <View>
-      <Text>Correct Answers: {correctAnswers}</Text>
-      <Text>Question length: {questions.length}</Text>
+    <View style={styles.container}>
+      <Text style={styles.score}>Score: {correctAnswers} / {questions.length} </Text>
       <Button
         text="Play Again"
         onPress={() => handlePlayAgain()}
@@ -39,5 +38,17 @@ const ResultScreen: React.FC = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    padding: 16,
+  },
+  score: {
+    fontSize: 24,
+    marginBottom: 10
+  }
+});
 
 export default ResultScreen;
