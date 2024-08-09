@@ -23,18 +23,17 @@ const ResultScreen: React.FC = () => {
   const navigation = useNavigation<ResultScreenNavigationProp>();
 
   const handlePlayAgain = () => {
-    setCorrectAnswers(0)
-    setCurrentQuestionIndex(0)
-    navigation.navigate("StartScreen")
+    setCorrectAnswers(0);
+    setCurrentQuestionIndex(0);
+    navigation.navigate("StartScreen");
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.score}>Score: {correctAnswers} / {questions.length} </Text>
-      <Button
-        text="Play Again"
-        onPress={() => handlePlayAgain()}
-      />
+      <Text style={styles.score}>
+        Score: {correctAnswers} / {questions.length}{" "}
+      </Text>
+      <Button text="Play Again" onPress={() => handlePlayAgain()} />
     </View>
   );
 };
@@ -47,8 +46,8 @@ const styles = StyleSheet.create({
   },
   score: {
     fontSize: 24,
-    marginBottom: 10
-  }
+    marginBottom: 10,
+  },
 });
 
 export default ResultScreen;

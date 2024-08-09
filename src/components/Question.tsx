@@ -33,7 +33,7 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
       ),
       3
     );
-  }, []);
+  }, [question]);
 
   const animatedStyle = useAnimatedStyle(() => {
     return {

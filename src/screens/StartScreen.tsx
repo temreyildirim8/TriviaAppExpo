@@ -15,8 +15,11 @@ const StartScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.buttonWrapper}> 
-        <Button onPress={() => navigation.navigate("QuizScreen")} text="Start"/>        
+      <View style={styles.buttonWrapper}>
+        <Button
+          onPress={() => navigation.navigate("QuizScreen")}
+          text="Start"
+        />
       </View>
     </View>
   );
@@ -32,6 +35,6 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   buttonWrapper: {
-    width: '50%'
+    width: "50%",
   },
 });
