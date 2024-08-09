@@ -42,15 +42,16 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <Animated.View style={[animatedStyle, styles.container]}>
       <Text style={styles.question}>
         {decodeHtmlEntities(question.question)}
+        {/* We are calling decodeHtmlEntities to get rid of html symbols like &quot */}
       </Text>
-      <Animated.View style={[animatedStyle, styles.buttonsWrapper]}>
+      <View style={styles.buttonsWrapper}>
         <Button onPress={() => handleAnswer('True')} text="True" />
         <Button onPress={() => handleAnswer('False')} text="False" />
-      </Animated.View>
-    </View>
+      </View>
+    </Animated.View>
   );
 };
 
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     flexDirection: 'row',
     justifyContent: 'center',
-    gap: 10,
+    gap: 20,
   },
 });
 
