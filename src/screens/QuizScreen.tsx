@@ -41,10 +41,10 @@ const QuizScreen: React.FC = () => {
           onAnswer={handleAnswer}
         />
       ) : (
-        <View style={styles.loadingContainer}>
+        <>
           <Skeleton height={80} width="80%" style={{ marginTop: 20 }} />
           <Skeleton height={40} width="50%" style={{ marginTop: 20 }} />
-        </View>
+        </>
       )}
     </View>
   );
@@ -55,12 +55,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  loadingContainer: {
-    flex: 1,
-    alignItems: "center",
-    padding: 16,
-  },
+  }
 });
 
 export default QuizScreen;

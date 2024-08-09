@@ -8,7 +8,7 @@ interface SkeletonProps {
   style?: object;
 }
 
-const Skeleton: React.FC<SkeletonProps> = ({ width = '100%', height = 20, borderRadius = 4, style }) => {
+const Skeleton: React.FC<SkeletonProps> = ({ width = '100%', height = 20, borderRadius = 10, style }) => {
   const animatedValue = React.useRef(new Animated.Value(0)).current;
 
   React.useEffect(() => {
