@@ -66,7 +66,7 @@ const Button: React.FC<ButtonProps> = ({
 
 const styles = StyleSheet.create({
   button: {
-    padding: 10,
+    padding: 20,
     borderRadius: 10,
     overflow: 'hidden', // Ensure scaling does not overflow
   },
