@@ -21,7 +21,7 @@ Install Dependencies:
 - npm install || yarn
 
 Start the project:
-- npx expo start --reset-cache
+- yarn start
 
 ## Native installation and usage 
 - git clone https://github.com/temreyildirim8/TriviaAppExpo.git
