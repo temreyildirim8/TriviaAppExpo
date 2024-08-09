@@ -30,7 +30,8 @@ export default function App() {
             component={StartScreen}
             options={{
               title: "Start",
-              headerTitleAlign: 'center'
+              headerTitleAlign: 'center',
+              headerTitleStyle: { fontSize: 24 },
             }}
           />
           <Stack.Screen
@@ -38,7 +39,8 @@ export default function App() {
             component={QuizScreen}
             options={{
               title: "Quiz",
-              headerTitleAlign: 'center'
+              headerTitleAlign: 'center',
+              headerTitleStyle: { fontSize: 24 },
             }}
           />
           <Stack.Screen
@@ -48,7 +50,8 @@ export default function App() {
               gestureEnabled: false,
               headerLeft: () => null,
               title: "Result",
-              headerTitleAlign: 'center'
+              headerTitleAlign: 'center',
+              headerTitleStyle: { fontSize: 24 }
             }}
           />
         </Stack.Navigator>
