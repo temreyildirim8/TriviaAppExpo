@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useAtom } from 'jotai';
-import { correctAnswersAtom, Question } from '../atoms/questionsAtom';
+import { correctAnswersAtom, currentQuestionIndexAtom, Question } from '../atoms/questionsAtom';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -23,7 +23,7 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
 
   useEffect(() => {
     wiggle.value = withSequence(
-      withTiming(-30, { duration: 200 }),
+      withTiming(-20, { duration: 200 }),
       withTiming(0, { duration: 200 })
     );
   }, [question]);

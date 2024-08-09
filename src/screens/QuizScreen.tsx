@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'react-native';
 import { useAtom } from 'jotai';
 import {
   questionsAtom,
@@ -36,10 +37,13 @@ const QuizScreen: React.FC = () => {
   return (
     <Page>
       {questions?.length > 0 ? (
-        <QuestionComponent
-          question={questions[currentQuestionIndex]}
-          onAnswer={handleAnswer}
-        />
+        <>
+          <Text>{`${String(currentQuestionIndex + 1)} / ${questions.length}`}</Text>
+          <QuestionComponent
+            question={questions[currentQuestionIndex]}
+            onAnswer={handleAnswer}
+          />
+        </>
       ) : (
         <>
           <Skeleton height={60} width="80%" style={{ marginTop: 20 }} />
