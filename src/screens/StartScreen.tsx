@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../types/navigation';
 import { useNavigation } from '@react-navigation/native';
@@ -16,6 +16,8 @@ const StartScreen: React.FC = () => {
 
   return (
     <Page>
+      <Text style={styles.description}>There are four trivia questions on this quiz. </Text>
+      <Text style={styles.description}> Would you dare? </Text>
       <View style={styles.buttonWrapper}>
         <Button
           onPress={() => navigation.navigate('QuizScreen')}
@@ -29,6 +31,10 @@ const StartScreen: React.FC = () => {
 export default StartScreen;
 
 const styles = StyleSheet.create({
+  description: {
+    fontSize: 18,
+    paddingBottom: 10
+  },
   buttonWrapper: {
     width: '50%',
   },
