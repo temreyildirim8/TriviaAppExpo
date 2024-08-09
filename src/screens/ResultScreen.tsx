@@ -32,7 +32,7 @@ const ResultScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.score}>
-        Correct Answers: {correctAnswers} / Wrong Answers:{' '}
+        Correct Answers: {correctAnswers} / Wrong Answers:
         {questions.length - correctAnswers}
       </Text>
       <Button text="Play Again" onPress={() => handlePlayAgain()} />

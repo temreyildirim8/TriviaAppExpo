@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import useColors from '../hooks/useColors';
 
 interface ButtonProps {
   text: string;
@@ -9,9 +10,16 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ text, onPress, style }) => {
+  const colors = useColors();
+
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.button, style]}>
-      <Text style={styles.buttonText}> {text} </Text>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.button, style, { backgroundColor: colors.buttonBgColor }]}
+    >
+      <Text style={[styles.buttonText, { color: colors.buttonColor }]}>
+        {text}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -20,12 +28,10 @@ const styles = StyleSheet.create({
   button: {
     padding: 10,
     borderRadius: 10,
-    backgroundColor: '#26867c',
   },
   buttonText: {
     fontSize: 40,
     textAlign: 'center',
-    color: '#ffffff',
   },
 });
 

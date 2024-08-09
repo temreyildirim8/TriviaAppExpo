@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Animated } from 'react-native';
+import useColors from '../hooks/useColors';
 
 interface SkeletonProps {
   width?: string | number;
@@ -15,6 +16,7 @@ const Skeleton: React.FC<SkeletonProps> = ({
   style,
 }) => {
   const animatedValue = React.useRef(new Animated.Value(0)).current;
+  const colors = useColors();
 
   React.useEffect(() => {
     Animated.loop(
@@ -43,19 +45,13 @@ const Skeleton: React.FC<SkeletonProps> = ({
   return (
     <Animated.View
       style={[
-        styles.skeleton,
         { width, height, borderRadius },
         animatedStyle,
         style,
+        { backgroundColor: colors.skeletonBgColor },
       ]}
     />
   );
 };
-
-const styles = StyleSheet.create({
-  skeleton: {
-    backgroundColor: '#e0e0e0',
-  },
-});
 
 export default Skeleton;
