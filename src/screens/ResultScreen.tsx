@@ -23,7 +23,7 @@ const ResultScreen: React.FC = () => {
   const navigation = useNavigation<ResultScreenNavigationProp>();
 
   const handlePlayAgain = () => {
-    setQuestions([]);
+    setQuestions([]); // We are doing this to reset the this entirely
     setCorrectAnswers(0);
     setCurrentQuestionIndex(0);
     navigation.navigate('StartScreen');
