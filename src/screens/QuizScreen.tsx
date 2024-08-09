@@ -46,7 +46,8 @@ const QuizScreen: React.FC = () => {
         </>
       ) : (
         <>
-          <Skeleton height={60} width="80%" style={{ marginTop: 20 }} />
+          <Skeleton height={20} width="10%" />
+          <Skeleton height={280} width="80%" style={{ marginTop: 20 }} />
           <Skeleton height={60} width="50%" style={{ marginTop: 20 }} />
         </>
       )}
