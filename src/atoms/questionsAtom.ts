@@ -8,4 +8,3 @@ export type Question = {
 export const questionsAtom = atom<Question[]>([]);
 export const currentQuestionIndexAtom = atom<number>(0);
 export const correctAnswersAtom = atom<number>(0);
-export const incorrectAnswersAtom = atom<number>(0);

@@ -1,23 +1,41 @@
-import React from 'react';
-import { View, Text, Button } from 'react-native';
-import { useAtom } from 'jotai';
-import { correctAnswersAtom, incorrectAnswersAtom } from '../atoms/questionsAtom';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { RootStackParamList } from '../types/navigation';
-import { useNavigation } from '@react-navigation/native';
+import React from "react";
+import { View, Text } from "react-native";
+import { useAtom } from "jotai";
+import {
+  correctAnswersAtom,
+  currentQuestionIndexAtom,
+  questionsAtom,
+} from "../atoms/questionsAtom";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamList } from "../types/navigation";
+import { useNavigation } from "@react-navigation/native";
+import Button from "../components/Button";
 
-type ResultScreenNavigationProp = StackNavigationProp<RootStackParamList, 'ResultScreen'>;
+type ResultScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  "ResultScreen"
+>;
 
 const ResultScreen: React.FC = () => {
-  const [correctAnswers] = useAtom(correctAnswersAtom);
-  const [incorrectAnswers] = useAtom(incorrectAnswersAtom);
+  const [questions] = useAtom(questionsAtom);
+  const [correctAnswers, setCorrectAnswers] = useAtom(correctAnswersAtom);
+  const [, setCurrentQuestionIndex] = useAtom(currentQuestionIndexAtom);
   const navigation = useNavigation<ResultScreenNavigationProp>();
+
+  const handlePlayAgain = () => {
+    setCorrectAnswers(0)
+    setCurrentQuestionIndex(0)
+    navigation.navigate("StartScreen")
+  };
 
   return (
     <View>
       <Text>Correct Answers: {correctAnswers}</Text>
-      <Text>Incorrect Answers: {incorrectAnswers}</Text>
-      <Button title="Play Again" onPress={() => navigation.navigate('StartScreen')} />
+      <Text>Question length: {questions.length}</Text>
+      <Button
+        text="Play Again"
+        onPress={() => handlePlayAgain()}
+      />
     </View>
   );
 };

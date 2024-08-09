@@ -3,7 +3,6 @@ import { View, Text, StyleSheet } from "react-native";
 import { useAtom } from "jotai";
 import {
   correctAnswersAtom,
-  incorrectAnswersAtom,
   Question,
 } from "../atoms/questionsAtom";
 import Animated, {
@@ -23,7 +22,6 @@ type QuestionProps = {
 
 const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
   const [, setCorrectAnswers] = useAtom(correctAnswersAtom);
-  const [, setIncorrectAnswers] = useAtom(incorrectAnswersAtom);
 
   const wiggle = useSharedValue(0);
 
@@ -46,8 +44,6 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
   const handleAnswer = (answer: "True" | "False") => {
     if (answer === question.correct_answer) {
       setCorrectAnswers((prev) => prev + 1);
-    } else {
-      setIncorrectAnswers((prev) => prev + 1);
     }
     onAnswer(answer);
   };
