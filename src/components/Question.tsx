@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useAtom } from 'jotai';
-import { correctAnswersAtom, currentQuestionIndexAtom, Question } from '../atoms/questionsAtom';
+import { correctAnswersAtom, Question } from '../atoms/questionsAtom';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
@@ -43,10 +43,12 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
 
   return (
     <Animated.View style={[animatedStyle, styles.container]}>
-      <Text style={styles.question}>
-        {decodeHtmlEntities(question.question)}
-        {/* We are calling decodeHtmlEntities to get rid of html symbols like &quot */}
-      </Text>
+      <View style={styles.questionTextWrapper}>
+        <Text style={styles.questionText}>
+          {decodeHtmlEntities(question.question)}
+          {/* We are calling decodeHtmlEntities to get rid of html symbols like &quot */}
+        </Text>
+      </View>
       <View style={styles.buttonsWrapper}>
         <Button onPress={() => handleAnswer('True')} text="True" />
         <Button onPress={() => handleAnswer('False')} text="False" />
@@ -58,9 +60,21 @@ const QuestionComponent: React.FC<QuestionProps> = ({ question, onAnswer }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+    height: 350,
+    width: '100%',
+    justifyContent: 'space-between'
   },
-  question: {
-    textAlign: 'center',
+  questionTextWrapper: {
+    padding: 10,
+    height: 280,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: '#000000',
+    borderWidth: 1,
+    borderRadius: 10,
+  },
+  questionText: {
     fontSize: 24,
   },
   buttonsWrapper: {
