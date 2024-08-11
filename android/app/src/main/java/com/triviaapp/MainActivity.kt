@@ -9,7 +9,6 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint.fabricEnable
 import com.facebook.react.defaults.DefaultReactActivityDelegate
 
 import expo.modules.ReactActivityDelegateWrapper
-import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView // Import gesture handler root view
 
 class MainActivity : ReactActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,22 +29,22 @@ class MainActivity : ReactActivity() {
    * Returns the instance of the [ReactActivityDelegate]. We use [DefaultReactActivityDelegate]
    * which allows you to enable New Architecture with a single boolean flags [fabricEnabled]
    */
-  override fun createReactActivityDelegate(): ReactActivityDelegate {
-    return ReactActivityDelegateWrapper(
-      this,
-      BuildConfig.IS_NEW_ARCHITECTURE_ENABLED,
-      object : DefaultReactActivityDelegate(
-        this,
-        mainComponentName,
-        fabricEnabled
-      ) {
-        override fun createRootView(): ReactRootView {
-          // Use RNGestureHandlerEnabledRootView for gesture handling
-          return RNGestureHandlerEnabledRootView(this@MainActivity)
-        }
-      }
-    )
-  }
+  // override fun createReactActivityDelegate(): ReactActivityDelegate {
+  //   return ReactActivityDelegateWrapper(
+  //     this,
+  //     BuildConfig.IS_NEW_ARCHITECTURE_ENABLED,
+  //     object : DefaultReactActivityDelegate(
+  //       this,
+  //       mainComponentName,
+  //       fabricEnabled
+  //     ) {
+  //       override fun createRootView(): ReactRootView {
+  //         // Use RNGestureHandlerEnabledRootView for gesture handling
+  //         return RNGestureHandlerRootView(this@MainActivity)
+  //       }
+  //     }
+  //   )
+  // }
 
   /**
    * Align the back button behavior with Android S
