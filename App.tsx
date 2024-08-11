@@ -10,12 +10,17 @@ import StartScreen from './src/screens/StartScreen';
 import QuizScreen from './src/screens/QuizScreen';
 import ResultScreen from './src/screens/ResultScreen';
 import { RootStackParamList } from './src/types/navigation';
+import { StatusBar } from 'react-native';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
     <Provider>
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+      />
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="StartScreen"
