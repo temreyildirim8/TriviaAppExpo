@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden', // Ensure scaling does not overflow
   },
   buttonText: {
-    fontSize: 40,
+    fontSize: 32,
     textAlign: 'center',
   },
 });
